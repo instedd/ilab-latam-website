@@ -1,0 +1,45 @@
+.frame
+  position: absolute
+  z-index: 10
+
+.framed
+  z-index: 5
+
+.frameloupe
+  +round-corners
+  position: absolute
+  z-index: 15
+  bottom: 10px
+  left: 10px
+  *background: $gray
+  background: rgba(0,0,0,0.6)
+  color: white
+  height: 21px
+  .loupe
+    background: url('/assets/images/zoom.gif') no-repeat
+    float: left
+    height: 19px
+    width: 19px
+    margin: 1px
+  .loupetext
+    float: left
+    margin-top: 3px
+    margin-right: 10px
+    margin-left: 3px
+    font-size: $smaller
+
+
+.framedcontainer
+  position: relative
+  a:hover
+    .loupetext
+      color: $lightergray
+    .loupe
+      background-position: 0px -19px
+
+.columns
+  .image
+    .framedcontainer
+      margin-top: 5px
+      margin-bottom: 5px
+

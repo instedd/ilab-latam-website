@@ -1,0 +1,70 @@
+$default_rounded_amount: 5px
+
+// Round corner at position by amount.
+// values for position: "top-left", "top-right", "bottom-left", "bottom-right"
+@mixin round-corner($position, $amount: $default_rounded_amount)
+  border-#{$position}-radius: $amount
+  -moz-border-#{$position}-radius: $amount
+  -webkit-border-#{$position}-radius: $amount
+
+// Round left corners by amount
+@mixin round-left-corners($amount: $default_rounded_amount)
+  +round-corner("top-left", $amount)
+  +round-corner("bottom-left", $amount)
+
+// Round right corners by amount
+@mixin round-right-corners($amount: $default_rounded_amount)
+  +round-corner("top-right", $amount)
+  +round-corner("bottom-right", $amount)
+
+// Round top corners by amount
+@mixin round-top-corners($amount: $default_rounded_amount)
+  +round-corner("top-left", $amount)
+  +round-corner("top-right", $amount)
+
+// Round bottom corners by amount
+@mixin round-bottom-corners($amount: $default_rounded_amount)
+  +round-corner("bottom-left", $amount)
+  +round-corner("bottom-right", $amount)
+
+// Round all corners by amount
+@mixin round-corners($amount: $default_rounded_amount)
+  border-radius: $amount
+  -moz-border-radius: $amount
+  -webkit-border-radius: $amount
+
+// Drop shadow
+@mixin drop-shadow($x:0px, $y:2px, $blur:5px, $color:rgba(0, 0, 0, .5))
+  box-shadow: $x $y $blur $color
+  -o-box-shadow: $x $y $blur $color
+  -webkit-box-shadow: $x $y $blur $color
+  -moz-box-shadow: $x $y $blur $color
+  background: white
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=3) progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=90,strength=3) progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=180,strength=6)      progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=3)
+
+// Inset drop shadow
+@mixin inset-drop-shadow($x:0px, $y:2px, $blur:2px, $color:rgba(0, 0, 0, .5))
+  box-shadow: inset $x $y $blur $color
+  -o-box-shadow: inset $x $y $blur $color
+  -webkit-box-shadow: inset $x $y $blur $color
+  -moz-box-shadow: inset $x $y $blur $color
+  background: white
+
+// Simple vertical gradient background
+@mixin background-vertical-gradient($top, $bottom)
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%) /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)) /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 ) /* ie */
+
+// Center content
+@mixin center
+  margin-left: auto
+  margin-right: auto
+
+@mixin clearfix
+  &:before
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both

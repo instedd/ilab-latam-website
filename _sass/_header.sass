@@ -1,0 +1,132 @@
+#header
+  min-height: 140px
+  font-size: $small
+
+#header_socials
+  padding-top: 10px
+  a
+    outline: 0
+    height: 26px
+    display: block
+    background-color: transparent
+    float: left
+  a:hover
+    background-position: 0px 27px
+
+.contact_us
+  padding-top: 10px
+  margin-right: 10px
+
+#bottom_header
+  @include clearfix
+  background-color: transparent
+  height: 30px
+  z-index: 1
+  a
+    outline: 0
+    height: 30px
+    display: block
+    background-color: transparent
+    float: left
+  a:hover
+    background-position: 0px 60px
+  a:active
+    background-position: 0px 30px
+  a.selected
+    background-position: 0px 30px
+
+#bottom_header_subnav
+  z-index: 0
+  .shadow
+    position: relative
+    top: -11px
+  .subnav
+    background: url('/assets/images/menu/subNavBackground.gif') no-repeat
+    height: 27px
+    margin-bottom: 20px
+    padding-left: 8px
+    a
+      color: white
+      position: relative
+      top: 5px
+      margin: 0px 4px
+      padding: 1px 4px
+    a.selected
+      +round-corners(5px)
+      background-color: $darkgreen
+      color: $lightgreen
+    a.selected:hover
+      color: white
+    a:hover
+      color: $lightgreen
+
+#top_header
+  font-size: $tiny
+  padding-bottom: 5px
+  padding-top: 20px
+  background: #EEEEEE   /* old browsers */
+  background: -moz-linear-gradient(top, #EEEEEE 0%, #FFFFFF 100%)   /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEEEEE), color-stop(100%,#FFFFFF))   /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#FFFFFF',GradientType=0 )   /* ie */
+
+#bottom_header
+  +center
+  width: 881px
+
+  .search
+    background-image: url('/assets/images/menu/searchBackground_large.gif')
+    width: 386px
+    height: 30px
+    float: left
+
+  .home
+    background-image: url('/assets/images/menu/inicio.gif')
+    width: 65px
+
+  .about_us
+    background-image: url('/assets/images/menu/nosotros.gif')
+    width: 84px
+
+  .job
+    background-image: url('/assets/images/menu/trabajo.gif')
+    width: 74px
+
+  .tools
+    background-image: url('/assets/images/menu/herramientas.gif')
+    width: 115px
+
+  .involve
+    background-image: url('/assets/images/menu/involucrate.gif')
+    width: 101px
+
+  .blogs
+    background-image: url('/assets/images/menu/blog.gif')
+    width: 56px
+
+  .multimedia
+    background-image: url('/assets/images/menu/multimedia.gif')
+    width: 100px
+
+.facebook_sprite
+  background-image: url('/assets/images/social/facebook.gif')
+  width: 28px
+
+.twitter_sprite
+  background-image: url('/assets/images/social/twitter.gif')
+  width: 27px
+
+.youtube_sprite
+  background-image: url('/assets/images/social/youTube.gif')
+  width: 27px
+
+.flickr_sprite
+  background-image: url('/assets/images/social/flickr.gif')
+  width: 26px
+
+.slideshare_sprite
+  background-image: url('/assets/images/social/slideshare.gif')
+  width: 29px
+
+.english
+  padding-top: 10px
+

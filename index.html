@@ -1,0 +1,254 @@
+---
+title: InSTEDD iLab América Latina
+layout: default
+id: 1
+subnavbar: no
+---
+<script type='text/javascript'>
+//<![CDATA[
+function carousel_initCallback(carousel) {
+  $('.dot_banner div a').click(function() {
+    var theClass = $(this).attr('class');
+    carousel.scroll(jQuery.jcarousel.intval(theClass.substring(theClass.length - 1)));
+    carousel.options.auto = 0;
+    return false;
+  });
+};
+
+function carousel_changeBtns(carousel, li, index) {
+  var real_index = index % 3 || 3
+  $('.dot_banner div a img').attr('src', '/assets/images/dot.png');
+  $('.dot_banner div a.banners-' + real_index + ' img').attr('src', '/assets/images/dotSelected.png');
+};
+
+$(function() {
+  $('#left-carousel').jcarousel({
+    scroll: 1,
+    buttonNextHTML: null,
+    buttonPrevHTML: null,
+    auto: 7,
+    wrap: 'circular',
+    vertical: true,
+    initCallback: carousel_initCallback,
+    itemFirstInCallback: carousel_changeBtns
+  });
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(function() {
+  $('.fancybox').fancybox({
+    'transitionIn': 'elastic',
+    'transitionOut': 'elastic',
+    'easingIn': 'easeOutBack',
+    'easingOut': 'easeInBack'
+  });
+
+  $('.fancybox-640x480').fancybox({
+    'transitionIn': 'elastic',
+    'transitionOut': 'elastic',
+    'easingIn': 'easeOutBack',
+    'easingOut': 'easeInBack',
+    'height': 480,
+    'width': 640
+  });
+
+  $('.fancybox-640x390').fancybox({
+    'transitionIn': 'elastic',
+    'transitionOut': 'elastic',
+    'easingIn': 'easeOutBack',
+    'easingOut': 'easeInBack',
+    'height': 390,
+    'width': 640
+  });
+
+  var frameHeight = 155;
+  var frameWidth = 280;
+
+  $('img.resize').each(function() {
+    var img = $(this);
+    var int = window.setInterval(function() {
+      if (img.height() > 16 && img.width() > 16) {
+        window.clearInterval(int);
+        resize(img);
+      }
+    }, 100);
+  });
+
+  function resize(img) {
+    var cropper = $('<div class="cropper"/>');
+    img.wrap(cropper);
+    h = img.height();
+    w = img.width();
+
+    if (w / h < frameWidth / frameHeight) {
+      factor = frameWidth / w;
+      newWidth = frameWidth;
+      newHeight = factor * h;
+      offset = -(newHeight - frameHeight) / 2;
+      margin = 'margin-top'
+    } else {
+      factor = frameHeight / h;
+      newWidth = factor * w;
+      newHeight = frameHeight;
+      offset = -(newWidth - frameWidth) / 2;
+      margin = 'margin-left'
+    }
+
+    img.width(newWidth);
+    img.height(newHeight);
+    img.css(margin, offset);
+    img.show();
+  }
+
+
+
+
+});
+
+//]]>
+</script>
+<div id='banners'>
+  <div class='content'>
+    <ul class='jcarousel-skin-banners' id='left-carousel'>
+      <li>
+        <div class='bannersText'>
+          <div class='bannersTextContent'>
+            <a href="/nosotros">
+              <div class='subiLabTitle'>
+                Quiénes somos
+              </div>
+              <div class='subiLabContent'>
+                El iLab América Latina es un laboratorio de innovación creado por InSTEDD, una organización internacional sin fines de lucro, en alianza con Manas Technology Solutions, una empresa de IT con base en Buenos Aires.
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class='banner_img'>
+          <a href="/nosotros"><img alt="01" src="/assets/images/picts/slider/01.jpg" />
+          </a>
+        </div>
+        <div class='clear'></div>
+      </li>
+      <li>
+        <div class='bannersText'>
+          <div class='bannersTextContent'>
+            <a href="/trabajo">
+              <div class='subiLabTitle'>
+                Qué hacemos
+              </div>
+              <div class='subiLabContent'>
+                Estamos propiciando un espacio de innovación, investigación y servicios de consultoría en tecnologías colaborativas.
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class='banner_img'>
+          <a href="/trabajo"><img alt="02" src="/assets/images/picts/slider/02.jpg" />
+          </a>
+        </div>
+        <div class='clear'></div>
+      </li>
+      <li>
+        <div class='bannersText'>
+          <div class='bannersTextContent'>
+            <a href="/involucrate">
+              <div class='subiLabTitle'>
+                Cómo puedes involucrarte
+              </div>
+              <div class='subiLabContent'>
+                Nos interesa conocerte. Trabajamos con comunidades locales, organizaciones de la sociedad civil, voluntarios sociales, universidades e instituciones académicas, empresas y fundaciones, gobiernos y organismos de cooperación.
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class='banner_img'>
+          <a href="/involucrate"><img alt="03" src="/assets/images/picts/slider/03.jpg" />
+          </a>
+        </div>
+        <div class='clear'></div>
+      </li>
+    </ul>
+    <div class='iLab'>
+      iLab
+    </div>
+    <div class='dot_banner'>
+      <div>
+        <a href="#" class="banners-1"><img alt="Dotselected" src="/assets/images/dotSelected.png" />
+        </a>
+      </div>
+      <div>
+        <a href="#" class="banners-2"><img alt="Dot" src="/assets/images/dot.png" />
+        </a>
+      </div>
+      <div>
+        <a href="#" class="banners-3"><img alt="Dot" src="/assets/images/dot.png" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class='columns homecontent'>
+  <tr class='supertitle'>
+    <td>Blog</td>
+    <td>Herramientas</td>
+    <td>Video</td>
+  </tr>
+  <tr class='title'>
+    <td>
+      <a href="http://blog.ilabamericalatina.org/2013/07/tecnologia-movil-aplicada-mejorar-la.html" target="_blank">Tecnología móvil aplicada a mejorar la planificación familiar en Camboya</a>
+    </td>
+    <td>
+      <a href="/herramientas">Plataforma de herramientas tecnológicas</a>
+    </td>
+    <td>
+      <a href="http://www.youtube.com/watch?v=ZhvAIpBbv2I" target="_blank">Video institucional de InSTEDD</a>
+    </td>
+  </tr>
+  <tr class='image'>
+    <td>
+      <div class="framedcontainer" style=" width: 280px; height: 156px;">
+        <a href="http://blog.ilabamericalatina.org/2013/07/tecnologia-movil-aplicada-mejorar-la.html" target="_blank"><img class="frame" src="/assets/images/frame280x156.png" style=" width: 280px; height: 156px;" /><img alt="Marie-stopes-international-" class=" framed resize" resize="true" src="http://2.bp.blogspot.com/-0Wfm0kFHKNc/Ueb0JUszttI/AAAAAAAABWE/MKor7EQCljE/s1600/Marie-Stopes-International-.jpg" target="_blank" />
+        </a>
+      </div>
+    </td>
+    <td>
+      <div class="framedcontainer" style=" width: 280px; height: 156px;">
+        <a href="/herramientas"><img class="frame" src="/assets/images/frame280x156.png" style=" width: 280px; height: 156px;" /><img alt="02" class=" framed" src="/assets/images/picts/thumbnail/02.jpg" style=" width: 280px; height: 156px;" />
+        </a>
+      </div>
+    </td>
+    <td>
+      <div class="framedcontainer" style=" width: 280px; height: 156px;">
+        <a href="http://www.youtube.com/embed/ZhvAIpBbv2I" class="fancybox-640x390 iframe" title="Video institucional de InSTEDD"><img class="frame" src="/assets/images/frame280x156.png" style=" width: 280px; height: 156px;" /><img alt="Video institucional de InSTEDD" class=" framed" fancybox="iframe640x390" loupe="false" src="/assets/images/picts/thumbnail/03.jpg" style=" width: 280px; height: 156px;" />
+        </a>
+      </div>
+    </td>
+  </tr>
+  <tr class='text'>
+    <td>
+      ¿Se puede mejorar la planificación familiar en Camboya valiéndose de la tecnología móvil? Marie Stopes International está usando Verboice para averiguarlo... Recientemente Brooke Estin, directora de Comunicaciones de InSTEDD, entrevistó a Vannak Uk, de Marie Stopes International en Camboya. Esto...
+      <a href="http://blog.ilabamericalatina.org/2013/07/tecnologia-movil-aplicada-mejorar-la.html">Leer más</a>
+    </td>
+    <td>
+      InSTEDD cuenta con una plataforma de productos y servicios integrados que cubren un amplio espectro de soluciones a problemáticas identificadas durante el trabajo de campo a través de todos estos años, en colaboración con numerosas organizaciones. Estas herramientas son completamente gratuitas y de código abierto, y están disponibles para cualquiera que desee utilizarlas para mejorar el impacto social y la escala de su trabajo. Todas ellas pueden ser adaptadas para necesidades particulares, e integradas con otras herramientas preexistentes.
+      <a href="/herramientas">Leer más</a>
+    </td>
+    <td>
+      “Mientras que algunas personas están trabajando en la vanguardia de la ayuda a la civilización, a través de la exploración del espacio y demás, otras deben hacerlo en la retaguardia, asegurándose de que el inefable sufrimiento que está padeciendo mucha gente alrededor del mundo sea tenido en cuenta. Yo elijo trabajar de este lado”.
+      <br>
+      <br>
+      <div class='textright'>
+        <b>Eduardo Jezierski, CTO de InSTEDD</b>
+      </div>
+      <div class='textright'>
+        (Extracto del video institucional de InSTEDD)
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div id='separator'></div>

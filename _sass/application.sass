@@ -1,0 +1,275 @@
+@import "sizes", "colors", "mixins", "footer", "fonts", "header", "frames", "forms", "contact", "tools", "google"
+
+.left
+  float: left
+
+.right
+  float: right
+
+.sansplain
+  font-family: 'TheSansPlain'
+
+.sansblackplain
+  font-family: 'TheSansExtraBoldPlain'
+
+.clear
+  clear: both
+
+.nodisplay
+  display: none
+
+body, html
+  padding: 0
+  margin: 0
+  height: 100%
+  font-family: Arial, The Sans Black Plain, The Sans Plain
+  font-size: $small
+  color: gray
+
+p
+  margin-top: 0
+
+.fullpage
+  width: 100%
+  .center
+    margin-top: 200px
+
+.center
+  +center
+
+.content
+  +center
+  width: 880px
+
+.columns
+  +center
+  color: $gray
+  border-spacing: 20px 0px
+  width: 920px
+  td
+    width: 280px
+    word-break: break-word
+  .supertitle
+    font-size: $tiny
+    vertical-align: top
+    color: $graylight
+  .title
+    font-size: $larger
+    font-family: 'TheSansPlain'
+    color: black
+    vertical-align: top
+  .image
+    vertical-align: top
+    td
+      padding-top: 5px
+      padding-bottom: 5px
+  .text
+    vertical-align: top
+    a
+      color: $green
+
+#container
+  min-height: 100%
+  position: relative
+
+#footer
+  position: absolute
+  bottom: 0px
+  width: 100%
+
+a
+  text-decoration: none
+  color: inherit
+  img
+    border: 0 none
+
+a:hover
+  color: $green
+
+.column
+  margin-bottom: 40px
+  margin-left: 20px
+  height: 580px
+  float: left
+  .green_title
+    font-family: 'TheSansPlain'
+    font-size: $huge
+  .first_p
+    font-size: $medium
+  .green_title, .first_p
+    color: $green
+
+.column.first
+  margin-left: 0px
+
+.mission
+  height: 755px
+
+h1
+  color: $green
+  font-size: $huge
+  margin: 12px 0px
+
+h2
+  color: $green
+  font-size: $larger
+  margin: 8px 0px
+  font-family: 'TheSansLightPlain'
+
+h3
+  font-size: $larger
+  margin: 8px 0px
+  font-family: 'TheSansLightPlain'
+
+.box
+  @include round-corners
+  @include drop-shadow
+  width: 280px
+  .separator
+    background: #E5E5E5 /* old browsers */
+    background: -moz-linear-gradient(top, #E5E5E5 0%, #FFFFFF 100%) /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E5E5E5), color-stop(100%,#FFFFFF)) /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E5E5E5', endColorstr='#FFFFFF',GradientType=0 ) /* ie */
+    height: 10px
+  .box-title, .box-content
+    padding: 10px
+  .box-content
+    ul
+      padding: 0px
+      margin: 0px
+
+.box_title_imgs
+  padding-top: 20px
+  padding-bottom: 10px
+  img
+    +center
+    display: block
+
+.error.box
+  width: 490px !important
+.error
+  .error-logo
+    padding: 10px
+    display: block
+  .error-text
+    width: 380px
+    margin-left: 10px
+    .error-title
+      font-size: $medium
+      color: $green
+      margin-bottom: 5px
+  .error-image
+    background: url('/assets/images/graphics/error.gif') no-repeat
+    display: block
+    width: 50px
+    height: 50px
+    margin-left: 20px
+    maargin-right: 10px
+
+.title
+  color: $green
+  font-size: $medium
+  .separator
+    width: 867px
+    height: 7px
+    display: block
+    background: url('/assets/images/separator.gif') no-repeat
+    margin-top: 15px
+    margin-bottom: 5px
+  h1
+    font-family: 'TheSansExtraBoldPlain'
+
+h1.subsec
+  font-family: 'TheSansPlain'
+
+.innercontent
+  width: 582px
+  margin-top: 10px
+  margin-bottom: 25px
+  a
+    color: $green
+  .graphics
+    +center
+    display: block
+    margin-top: 30px
+    margin-bottom: 30px
+
+.sidebar
+  padding-top: 10px
+  margin-bottom: 40px
+  .box-title
+    font-family: 'TheSansPlain'
+    font-size: $larger
+
+ul.text
+  list-style: none
+  padding-left: 0px
+  li
+    padding-left: 10px
+    padding-bottom: 5px
+    background: url("/images/bullet.gif") no-repeat
+    background-position: 0px 5px
+
+.non-fixed-width
+  width: 100%
+
+.scenarios
+  .box-title
+    font-family: 'TheSansPlain'
+    font-size: $larger
+  .box-content
+    margin-bottom: 20px
+
+table.scenarios
+  td
+    vertical-align: top
+    padding-bottom: 20px
+  .desc
+    width: 210px
+    padding-left: 10px
+    padding-right: 10px
+  .desc-title
+    font-family: 'TheSansPlain'
+    font-size: $large
+  .description
+    font-size: $tiny
+
+.pict
+  .framedcontainer
+    padding: 5px
+
+.bigger
+  font-size: 20px
+  font-family: "TheSansPlain"
+  margin-bottom: 5px
+
+.small_margin
+  margin: 10px
+
+ul.links
+  list-style: none
+  padding-left: 0px
+  li
+    padding-left: 10px
+    padding-bottom: 5px
+    background: url("/images/small_arrow.gif") no-repeat
+    background-position: 0px 5px
+
+.blogcontent
+  padding-top: 10px
+  tr.text
+    td
+      padding-bottom: 50px
+
+.textright
+  text-align: right
+
+.resize
+  display: none
+
+.cropper
+  overflow: hidden
+  width: 280px
+  height: 156px
+
+

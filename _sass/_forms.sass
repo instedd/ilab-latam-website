@@ -1,0 +1,59 @@
+label
+  display: block
+  margin: 1px 0px
+  font-size: $small
+
+label.error
+  display: inline
+  color: $orange
+  margin-left: 5px
+  
+label.checkbox
+  display: inline
+  position: relative
+  bottom: 2px
+
+input, select, textarea
+  margin-bottom: 2px
+
+input[type="text"], select
+  width: 280px
+
+input[type="text"].error
+  border: 1px solid $orange
+
+input[type="submit"]
+  width: 80px
+
+textarea
+  width: 580px
+  height: 100px
+
+@mixin notification
+  +round-corners
+  padding: 2px 6px
+  background-color: $green
+  color: white
+  display: none
+
+#contactform
+  margin-bottom: 20px
+  .result
+    +notification
+    position: relative
+    top: 1px
+    left: 15px
+    max-width: 478px
+        
+#newsletterform
+  input[type="text"], select
+    width: 250px
+  label.error
+    display: block
+    margin-left: 0px
+  .result
+    +notification
+    max-width: 250px
+    margin-top: 4px
+
+

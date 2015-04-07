@@ -1,0 +1,113 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="{{ "/css/application.css" | prepend: site.baseurl }}">
+  {% if subnavbar == no %}<link rel="stylesheet" href="{{ "/css/home.css" | prepend: site.baseurl }}">{% endif %}
+  <link rel="stylesheet" href="{{ "/css/jquery.fancybox-1.3.4.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/jquery.jgrowl.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/google.cse-default.css" | prepend: site.baseurl }}">
+  <script src="{{ "/javascripts/jquery.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery-ui.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/application.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery.mousewheel-3.0.4.pack.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery.easing-1.3.pack.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery.fancybox-1.3.4.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery.jgrowl_minimized.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+  <script src="{{ "/javascripts/jquery.jcarousel.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+
+  <script type="text/javascript">
+  //<![CDATA[
+
+  $(function() {
+    $('.fancybox').fancybox({
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic',
+      'easingIn'      : 'easeOutBack',
+      'easingOut'     : 'easeInBack'
+    });
+
+    $('.fancybox-640x480').fancybox({
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic',
+      'easingIn'      : 'easeOutBack',
+      'easingOut'     : 'easeInBack',
+      'height'        : 480,
+      'width'         : 640
+    });
+
+    $('.fancybox-640x390').fancybox({
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic',
+      'easingIn'      : 'easeOutBack',
+      'easingOut'     : 'easeInBack',
+      'height'        : 390,
+      'width'         : 640
+    });
+
+    var frameHeight = 155;
+    var frameWidth = 280;
+
+    $('img.resize').each(function(){
+      var img = $(this);
+      var int = window.setInterval(function() {
+        if (img.height() > 16 && img.width() > 16) {
+          window.clearInterval(int);
+          resize(img);
+        }
+      }, 100);
+    });
+
+    function resize(img) {
+      var cropper = $('<div class="cropper"/>');
+      img.wrap(cropper);
+      h = img.height();
+      w = img.width();
+
+      if (w/h < frameWidth/frameHeight) {
+        factor = frameWidth / w;
+        newWidth = frameWidth;
+        newHeight = factor * h;
+        offset = -(newHeight - frameHeight)/2;
+        margin = 'margin-top'
+      } else {
+        factor = frameHeight / h;
+        newWidth = factor * w;
+        newHeight = frameHeight;
+        offset = -(newWidth - frameWidth)/2;
+        margin = 'margin-left'
+      }
+
+      img.width(newWidth);
+      img.height(newHeight);
+      img.css(margin, offset);
+      img.show();
+    }
+  });
+
+
+
+  //]]>
+  </script>
+
+  <script type="text/javascript">
+
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-22598608-1']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+  </script>
+
+</head>
+
+

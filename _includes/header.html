@@ -1,0 +1,45 @@
+<div id='header'>
+  <div id='top_header'>
+    <div class='content'>
+      <a href="/" class="left"><img alt="Ilablatam" src="/assets/images/ilabLatam.png" />
+      </a>
+      <div class='right' id='header_socials'>
+        <span class='left'>
+          <a href="/contactanos" class="contact_us">Contáctanos</a>
+          <a href="http://facebook.com/ILabLatAm" class="facebook_sprite"> </a>
+          <a href="https://plus.google.com/118256728100186284398" class="google_plus_sprite" rel="publisher"> </a>
+          <a href="http://twitter.com/iLabLatam" class="twitter_sprite"> </a>
+          <a href="http://www.youtube.com/user/ilabLatam" class="youtube_sprite"> </a>
+          <a href="http://www.flickr.com/photos/instedd" class="flickr_sprite"> </a>
+          <a href="http://slideshare.net/iLabLatAm/" class="slideshare_sprite"> </a>
+        </span>
+      </div>
+      <div class='clear'></div>
+      <div class='english right'>
+        <a href="http://instedd.org">InSTEDD.org (English)</a>
+      </div>
+      <div class='clear'></div>
+    </div>
+  </div>
+  <div id='bottom_header'>
+    <a href="/" class="{% if page.id == 1 %} selected {% endif %}home"> </a>
+    <a href="/nosotros" class="{% if page.url contains 'nosotros' %} selected {% endif %}about_us"> </a>
+    <a href="/trabajo" class="{% if page.url contains 'trabajo' %} selected {% endif %}job"> </a>
+    <a href="/herramientas" class="{% if page.url contains 'herramientas' %} selected {% endif %}tools"> </a>
+    <a href="/involucrate" class="{% if page.url contains 'involucrate' %} selected {% endif %}involve"> </a>
+    <a href="/blog" class="{% if page.url contains 'blog' %} selected {% endif %}blogs"> </a>
+    <div class='search'>
+    </div>
+  </div>
+<!--   <div class='content' id='bottom_header_subnav'>
+    <img alt="Shadow" class="shadow" src="/assets/images/menu/shadow.gif" />
+  </div> -->
+  <div class="content" id="bottom_header_subnav">
+    <div class="subnav">
+      {% if page.subnav %}
+      {% include {{page.subnav}} %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
