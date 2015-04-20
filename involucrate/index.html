@@ -14,10 +14,9 @@ layout: default
     <p>Tenemos experiencia en ayudar a los demás a crear las soluciones más efectivas para problemas que ellos mismos conocen mejor que nadie. Contáctanos para que exploremos juntos oportunidades de colaboración.</p>
 
 
-    <form action="https://getsimpleform.com/messages?form_api_token=734b78898628e626510f86e12b52b398" method="post">
-      <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-      <input type='hidden' name='redirect_to' value='http://localhost:4000/involucrate/gracias.html' />
-      <!-- all your input fields here.... -->
+    <form action="https://getsimpleform.com/messages?form_api_token=8235d3e7d9ea4d1100416e41e69a3552" method="post">
+      <input type='hidden' name='redirect_to' value='http://www.ilabamericalatina.org/involucrate/gracias.html' />
+      <input name="intent" type="hidden" value="send a message" />
       <p>
         <label for="email">E-mail</label>
         <input class="required email" id="email" name="email" type="text" />
@@ -110,22 +109,20 @@ layout: default
       <div class='box-title'>Suscríbete a nuestro Newsletter</div>
       <div class='separator'></div>
       <div class='box-content'>
-        <form accept-charset="UTF-8" action="/newsletter" data-remote="true" id="newsletterform" method="post">
-          <div style="margin:0;padding:0;display:inline">
-            <input name="utf8" type="hidden" value="&#x2713;" />
-            <input name="authenticity_token" type="hidden" value="RAC9q6XCYoHo7IZyyhZLmSQiahricPZUBXWIyUJ3WXE=" />
-          </div>
+        <form accept-charset="UTF-8" action="https://getsimpleform.com/messages?form_api_token=8235d3e7d9ea4d1100416e41e69a3552" id="newsletterform" method="post">
+          <input name="intent" type="hidden" value="subscribe to newsletter" />
+          <input type='hidden' name='redirect_to' value='http://www.ilabamericalatina.org/involucrate/subscripto.html' />
           <p>
-            <label for="EMAIL">E-mail</label>
-            <input class="required email" id="EMAIL" name="EMAIL" type="text" />
+            <label for="email">E-mail</label>
+            <input class="required email" id="email" name="email" type="text" />
           </p>
           <p>
-            <label for="FNAME">Nombre</label>
-            <input id="FNAME" name="FNAME" type="text" />
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" />
           </p>
           <p>
-            <label for="LNAME">Apellido</label>
-            <input id="LNAME" name="LNAME" type="text" />
+            <label for="last-name">Apellido</label>
+            <input id="last-name" name="last-name" type="text" />
           </p>
           <div>
             <input data-disable-with="Enviando..." name="commit" type="submit" value="Enviar" />
